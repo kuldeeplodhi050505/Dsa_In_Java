@@ -1,0 +1,30 @@
+// ye sabse basic tarika hai but isme Time  complexity 0(n3) rahti hai kyonki isme 3 loop use hote hai  
+import java.util.*;
+class Main {
+    public static void maxSubarray(int nums []){
+        int current  = 0;
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i<nums.length;i++){
+             for(int j = i; j<nums.length;j++){
+                 current  = 0;
+                 for(int k = i ; k<=j; k++){
+                     current += nums[k];
+                     System.out.println(current);
+                     if(max<current){
+                         max = current ; 
+                     }
+                     
+                     
+                 }
+             }
+            
+        }
+        System.out.println("Max Sum = "  + max);
+    }
+    
+    public static void main(String[] args) {
+       int nums[] = {1,-2,6,-1,3} ;
+       maxSubarray(nums);
+      
+    }
+}
